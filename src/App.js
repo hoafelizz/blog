@@ -9,19 +9,27 @@ import ListPost from './Components/ListPost';
 class App extends Component {
   constructor(props){
     super(props);
+    this.state = {
+      posts: []
+    }
   }
-  render() {
-    var posts = [];
+
+  componentDidMount() {
     fetch('http://example.api/wp-json/api/v1/posts')
     .then(res => res.json())
     .then(res=> {
-      posts = res.data;
+      this.setState({
+        posts: res.data
+      });
     }).catch(err=>console.log(err));
+  }
+
+  render() {
     return (
       <div id="wrapper">
         <Nav />
         <Header />
-        <ListPost posts={posts}/>
+        <ListPost posts={this.state.posts}/>
       </div>
     );
   }
