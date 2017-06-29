@@ -6,7 +6,7 @@ var PostItem = require('./PostItem');
 
 var ListPost = createReactClass({
     render(){
-        var posts = (props.posts) ? props.posts : [];
+        var posts = (this.props.posts) ? this.props.posts : [];
         return(
             <div className="container">
                 <div className="row">
