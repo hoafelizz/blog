@@ -7,13 +7,13 @@ var PostItem = createReactClass({
             <div className="post-preview">
                 <a href="post.html">
                     <h2 className="post-title">
-                        {props.title}
+                        {this.props.title}
                     </h2>
                     <h3 className="post-subtitle">
-                        {props.description}
+                        {this.props.description}
                     </h3>
                 </a>
-                <p className="post-meta">Posted by <a href="#">{props.author}</a> on September 24, 2014</p>
+                <p className="post-meta">Posted by <a href="#">{this.props.author}</a> on September 24, 2014</p>
                 <hr/>
             </div>
         )
